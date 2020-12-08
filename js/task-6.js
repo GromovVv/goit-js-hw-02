@@ -14,36 +14,46 @@
 
 
 
-// bell Делать проверку того, что пользователь ввел именно число, а не произвольный набор символов, 
-// не обязательно. Если хочешь, в случае некорректного ввода, показывай alert с текстом 
-// 'Было введено не число, попробуйте еще раз', при этом результат prompt записывать в массив 
-// чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
-
 let input;
 const numbers = [];
 let total = 0;
 
 
 while (true) {
-    input = prompt('Введите число!');
-   
-    numbers.push(input);
-    console.log(numbers);
+     input = prompt('Введите число!');
+    
 
     if (input === null) {
-        alert (`Общая сумма чисел равна ${total}`);
         break;
     }
 
     input = Number(input);
     const notANumber = Number.isNaN(input);
     if (notANumber) {
-        alert('Было введено не число, попробуйте еще раз.');
+        alert ('Было введено не число, попробуйте еще раз.');
         continue;
+    }
+    if (input !== notANumber){
+        numbers.push(input);
+    }
+    
+
+    for (const number of numbers) {
     }
 
     total += input;
 
   } 
 
-  console.log(`Общая сумма чисел равна ${total}`);
+  console.log(`Общая сумма чисел равна - ${total}.`);
+
+//  console.log(Массив чисел - [${numbers}]);
+console.log(`Массив введенных чисел = [${numbers}]`);
+  
+//   const clients = [3, 4, 5];
+//   let total = 0;
+
+//   for (const client of clients) {
+//     total += client;
+//     console.log(total);
+//   }
