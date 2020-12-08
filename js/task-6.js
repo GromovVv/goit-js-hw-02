@@ -27,7 +27,7 @@
 // console.log(`Общая сумма чисел равна - ${total}.`);
 // console.log(`Массив введенных чисел = [${numbers}]`);
   
-// 'use strict';
+'use strict';
 
 let input;
 const numbers = [];
@@ -42,15 +42,12 @@ while (true) {
         }
         alert (`Общая сумма чисел равна - ${total}`);
         break;
-    }
-    
-    input = Number(input);
-    const notANumber = Number.isNaN(input);
-    if (notANumber) {
+    } else if (Number.isNaN(Number(input))) {
         alert ('Было введено не число, попробуйте еще раз.');
         continue;
+    } else {
+        numbers.push(Number(input));
     }
 
-    numbers.push(Number(input));
-    
+
 }
