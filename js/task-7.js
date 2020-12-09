@@ -12,22 +12,20 @@ const isLoginValid = (login) => {
 }
 
 const isLoginUnique = (allLogins, login) => {
-    for (const oneLogin of allLogins) {
         if (allLogins.includes(login)) {
             return false;
         } else {
             return true;
         }
     }
-}
 
 const addLogin = (allLogins, login) => {
     if (isLoginValid(login) === false) {
         return ('Ошибка! Логин должен быть от 4 до 16 символов');
-    } else if (isLoginValid(login) === true) {
+    } else {
         if (isLoginUnique(allLogins, login) === false){
             return ('Такой логин уже используется!');
-        } else if (isLoginUnique(allLogins, login) === true) {
+        } else {
             allLogins.push(login);
             return ('Логин успешно добавлен!');
         }

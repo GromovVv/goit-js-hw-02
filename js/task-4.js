@@ -1,6 +1,6 @@
 
 const formatString = (str) => {
-   str = str.length <= 40 ? str : str.slice(0, 37) + '...';
+   str = str.length <= 40 ? str : str.slice(0, 40) + '...';
    return str;
 }
 
